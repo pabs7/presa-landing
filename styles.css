@@ -1,0 +1,130 @@
+/* Landing de Presa: mismos colores y tipografías que la app (frontend/src/styles.css). */
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #1b2521;
+  background: #f2f4ed;
+  text-rendering: optimizeLegibility;
+  --ink: #1b2521;
+  --muted: #727b73;
+  --line: #dfe4da;
+  --paper: #fbfcf8;
+  --forest: #1c3029;
+  --night: #17211e;
+  --leaf: #c4e66b;
+  --hold: #2ecc71;
+  --display: 'Barlow Condensed', sans-serif;
+  --gutter: clamp(16px, 5vw, 64px);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: var(--paper); }
+a { color: inherit; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #79a533; outline-offset: 3px; }
+img { display: block; }
+
+.eyebrow { margin: 0 0 12px; color: #74846f; font-size: 11px; font-weight: 700; letter-spacing: 1.7px; }
+.eyebrow-light { color: #b9c9b3; }
+h1, h2, h3 { margin: 0; font-family: var(--display); letter-spacing: 0; }
+h2 { max-width: 640px; font-size: clamp(38px, 5vw, 58px); font-weight: 600; line-height: .96; }
+h3 { font-size: 26px; font-weight: 600; line-height: 1; }
+
+.button {
+  min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 0 20px; border-radius: 3px; font-size: 13px; font-weight: 700; text-decoration: none;
+  transition: background .18s ease, transform .18s ease;
+}
+.button:hover { transform: translateY(-1px); }
+.button-leaf { background: var(--leaf); color: var(--forest); }
+.button-leaf:hover { background: #d3ef86; }
+.button-light { background: #fff; color: var(--forest); }
+.button-outline-light { border: 1px solid rgba(255, 255, 255, .55); color: #fff; }
+.button-outline-light:hover { border-color: #fff; }
+
+.brand { display: inline-flex; align-items: center; gap: 9px; color: inherit; font-family: var(--display); font-size: 24px; font-weight: 800; letter-spacing: 1px; text-decoration: none; }
+.brand img { width: 46px; height: 26px; object-fit: contain; }
+
+/* Cabecera sobre la foto */
+.site-header {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 2;
+  display: flex; align-items: center; gap: 24px; padding: 22px var(--gutter); color: #fff;
+}
+.site-nav { display: flex; gap: 22px; margin-left: auto; font-size: 13px; font-weight: 600; }
+.site-nav a { text-decoration: none; opacity: .85; }
+.site-nav a:hover { opacity: 1; }
+
+/* Portada */
+.hero {
+  min-height: 100vh; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: center; gap: 48px;
+  padding: 120px var(--gutter) 72px; color: #fff;
+  background:
+    linear-gradient(180deg, rgba(17, 34, 29, .55) 0%, rgba(17, 34, 29, .88) 100%),
+    url('https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=1800&q=80') center 44% / cover;
+}
+.hero h1 { font-size: clamp(64px, 9vw, 118px); font-weight: 700; line-height: .84; }
+.hero-lead { max-width: 520px; margin: 26px 0 0; color: #dfe7da; font-size: 17px; line-height: 1.6; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.hero-note { margin: 14px 0 0; color: #b9c9b3; font-size: 13px; }
+
+/* Ilustración del móvil con la app */
+.phone { justify-self: center; width: min(300px, 100%); padding: 12px; border-radius: 34px; background: #0c1411; box-shadow: 0 30px 80px rgba(0, 0, 0, .45); }
+.phone-screen { display: grid; gap: 10px; padding: 22px 16px 26px; border-radius: 24px; background: var(--paper); color: var(--ink); }
+.phone-top { display: flex; align-items: center; gap: 6px; font-family: var(--display); font-size: 18px; font-weight: 800; }
+.phone-top img { width: 30px; height: 18px; object-fit: contain; }
+.phone-eyebrow { margin: 8px 0 0; color: #74846f; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; }
+.phone-title { margin: 0; font-family: var(--display); font-size: 34px; font-weight: 600; line-height: 1; }
+.phone-membership { display: flex; justify-content: space-between; padding: 10px 12px; border-radius: 3px; background: var(--forest); color: #fff; font-size: 11px; }
+.phone-membership strong { color: var(--leaf); }
+.phone-slot { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 3px; background: #fff; font-size: 11px; }
+.phone-slot strong { font-family: var(--display); font-size: 18px; }
+.phone-slot span { color: var(--muted); }
+.phone-slot em { padding: 5px 8px; border-radius: 3px; background: var(--forest); color: #fff; font-style: normal; font-weight: 700; }
+.phone-slot-booked { border-color: var(--hold); }
+.phone-slot-booked em { background: #f4e1dc; color: #a24631; }
+
+/* Secciones */
+.section { padding: 96px var(--gutter); }
+.section-dark { background: var(--forest); color: #fff; }
+
+.feature-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 40px; }
+.feature { padding: 24px; border: 1px solid var(--line); border-radius: 3px; background: #fff; }
+.feature p { margin: 12px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+
+.clubs { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.clubs-lead { max-width: 520px; margin: 22px 0 30px; color: #cfdacb; font-size: 16px; line-height: 1.6; }
+.clubs-contact { margin: 14px 0 0; color: #b9c9b3; font-size: 13px; }
+.clubs-list { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.clubs-list li { display: grid; gap: 6px; padding: 20px; border: 1px solid rgba(255, 255, 255, .14); border-radius: 3px; }
+.clubs-list strong { font-family: var(--display); font-size: 22px; font-weight: 600; }
+.clubs-list span { color: #cfdacb; font-size: 14px; line-height: 1.5; }
+
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 40px 0 0; padding: 0; list-style: none; }
+.steps li { display: grid; gap: 8px; padding: 24px; border-top: 3px solid var(--forest); background: #fff; }
+.steps span { color: #819454; font-family: var(--display); font-size: 40px; font-weight: 700; line-height: 1; }
+.steps strong { font-family: var(--display); font-size: 24px; font-weight: 600; }
+.steps p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+.section-faq { background: #f2f4ed; }
+.section-faq h2 { margin-bottom: 28px; }
+details { max-width: 760px; border-bottom: 1px solid var(--line); }
+summary { padding: 18px 0; cursor: pointer; font-weight: 700; }
+details p { margin: 0 0 18px; color: var(--muted); line-height: 1.6; }
+
+.site-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; padding: 32px var(--gutter); background: var(--night); color: #dfe7da; font-size: 13px; }
+.site-footer p { margin: 0; }
+.footer-copy { margin-left: auto !important; color: #8d9a8e; }
+
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .clubs { grid-template-columns: 1fr; gap: 36px; }
+}
+
+@media (max-width: 640px) {
+  .site-nav { display: none; }
+  .site-header .button { margin-left: auto; }
+  .section { padding: 64px var(--gutter); }
+  .feature-grid, .steps { grid-template-columns: 1fr; }
+  .hero-actions .button { flex: 1 1 100%; }
+  .footer-copy { margin-left: 0 !important; }
+}

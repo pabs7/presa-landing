@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17211e" />
+    <title>Presa | La app de tu rocódromo</title>
+    <meta name="description" content="Presa conecta a los socios con su rocódromo: reservas con aforo, vías de los muros, noticias y encuestas, en una app que se instala en el móvil." />
+    <link rel="icon" type="image/png" href="/presa-logo.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-app-url="${PRESA_APP_URL}" data-contact-email="${PRESA_CONTACT_EMAIL}">
+    <header class="site-header">
+      <a class="brand" href="#inicio"><img alt="" src="/presa-logo.png" /><span>Presa</span></a>
+      <nav aria-label="Secciones" class="site-nav">
+        <a href="#socios">Para socios</a>
+        <a href="#rocodromos">Para rocódromos</a>
+        <a href="#preguntas">Preguntas</a>
+      </nav>
+      <a class="button button-light" data-member-link href="${PRESA_APP_URL}/">Entrar</a>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow eyebrow-light">LA APP DE TU ROCÓDROMO</p>
+          <h1>Reserva, escala<br />y comparte.</h1>
+          <p class="hero-lead">
+            Presa conecta a los socios con su rocódromo: reservas con aforo, vías de los muros,
+            noticias y encuestas, en una app que se instala en el móvil.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-leaf" data-member-cta href="${PRESA_APP_URL}/">
+              <span data-member-cta-label>Entrar en la app</span>
+            </a>
+            <a class="button button-outline-light" href="#rocodromos">Tengo un rocódromo</a>
+          </div>
+          <p class="hero-note" data-member-note>¿Estás en el móvil? Desde allí puedes instalar la app.</p>
+        </div>
+
+        <div aria-hidden="true" class="phone">
+          <div class="phone-screen">
+            <div class="phone-top"><img alt="" src="/presa-logo.png" /><span>Presa</span></div>
+            <p class="phone-eyebrow">BLOQUE · HOY</p>
+            <p class="phone-title">Hola, Ana.</p>
+            <div class="phone-membership"><span>Tu cuota</span><strong>Cuota activa</strong></div>
+            <div class="phone-slot"><strong>18:00</strong><span>Bloque · 6 libres</span><em>Reservar</em></div>
+            <div class="phone-slot phone-slot-booked"><strong>19:00</strong><span>Bloque · reservada</span><em>Cancelar</em></div>
+            <div class="phone-slot"><strong>20:00</strong><span>Bloque · completa</span><em>En espera</em></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="socios">
+        <p class="eyebrow">PARA SOCIOS</p>
+        <h2>Todo tu rocódromo en el bolsillo.</h2>
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>Reserva tu franja</h3>
+            <p>Ves el aforo en tiempo real y reservas en segundos. Si está lleno, te apuntas a la lista de espera.</p>
+          </article>
+          <article class="feature">
+            <h3>Las vías del muro</h3>
+            <p>Crea vías sobre la foto del muro marcando las presas y descubre las que proponen otros socios.</p>
+          </article>
+          <article class="feature">
+            <h3>Al día del club</h3>
+            <p>Noticias y encuestas del rocódromo en un solo sitio, sin perderte nada en grupos de mensajería.</p>
+          </article>
+          <article class="feature">
+            <h3>Tu cuota, a la vista</h3>
+            <p>Sabes siempre si tu cuota está activa y si te falta firmar la exención antes de ir a escalar.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="rocodromos">
+        <div class="clubs">
+          <div>
+            <p class="eyebrow eyebrow-light">PARA ROCÓDROMOS</p>
+            <h2>Gestiona tu rocódromo sin hojas de cálculo.</h2>
+            <p class="clubs-lead">
+              Tus socios reservan desde la app y tu equipo lo gestiona todo desde un panel propio.
+              Sin instalar nada: nosotros nos ocupamos del alojamiento y de las actualizaciones.
+            </p>
+            <a class="button button-leaf" data-contact-link href="mailto:${PRESA_CONTACT_EMAIL}?subject=Quiero%20Presa%20para%20mi%20roc%C3%B3dromo">
+              Solicita una demo
+            </a>
+            <p class="clubs-contact">o escríbenos a <a data-contact-link href="mailto:${PRESA_CONTACT_EMAIL}">${PRESA_CONTACT_EMAIL}</a></p>
+          </div>
+          <ul class="clubs-list">
+            <li><strong>Espacios y horarios propios</strong><span>Aforo, duración de las franjas y horario de apertura de cada espacio.</span></li>
+            <li><strong>Franjas automáticas y lista de espera</strong><span>Las franjas se crean solas y la lista de espera avanza cuando alguien cancela.</span></li>
+            <li><strong>Panel para tu equipo</strong><span>Socios, cuotas, exenciones, muros, noticias y encuestas en un mismo panel.</span></li>
+            <li><strong>Tus datos, solo tuyos</strong><span>Cada rocódromo tiene sus datos separados de los demás.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="como-funciona">
+        <p class="eyebrow">CÓMO FUNCIONA</p>
+        <h2>En marcha en tres pasos.</h2>
+        <ol class="steps">
+          <li><span>1</span><strong>Damos de alta tu rocódromo</strong><p>Te entregamos el acceso al panel de tu club.</p></li>
+          <li><span>2</span><strong>Configuras tu club</strong><p>Espacios, horarios, muros y socios, a tu manera.</p></li>
+          <li><span>3</span><strong>Tus socios reservan</strong><p>Eligen tu rocódromo en la app, la instalan y listo.</p></li>
+        </ol>
+      </section>
+
+      <section class="section section-faq" id="preguntas">
+        <p class="eyebrow">PREGUNTAS FRECUENTES</p>
+        <h2>Dudas habituales.</h2>
+        <details>
+          <summary>¿Hay que descargar algo de una tienda de aplicaciones?</summary>
+          <p>No. Presa se instala desde el navegador del móvil: abre la app y pulsa «Instalar app». En iPhone, desde Safari: Compartir → «Añadir a pantalla de inicio».</p>
+        </details>
+        <details>
+          <summary>¿Funciona en iPhone y en Android?</summary>
+          <p>Sí, en los dos, y también desde el ordenador.</p>
+        </details>
+        <details>
+          <summary>Mi rocódromo ya usa Presa, ¿cómo entro?</summary>
+          <p>Pulsa «Entrar», busca tu rocódromo o escribe su código e inicia sesión con la cuenta que te ha dado tu club.</p>
+        </details>
+        <details>
+          <summary>¿Mi rocódromo necesita servidores o conocimientos técnicos?</summary>
+          <p>No. Nos ocupamos del alojamiento y de las actualizaciones; tu equipo solo usa el panel de gestión.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#inicio"><img alt="" src="/presa-logo.png" /><span>Presa</span></a>
+      <p>Contacto: <a data-contact-link href="mailto:${PRESA_CONTACT_EMAIL}">${PRESA_CONTACT_EMAIL}</a></p>
+      <p class="footer-copy">© <span data-year></span> Presa</p>
+    </footer>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
