@@ -1,5 +1,5 @@
 # Landing pública de Presa: página estática servida por nginx. Se construye desde la raíz del repo.
-FROM nginx:1.27-alpine
+FROM nginx:1.30-alpine
 
 COPY landing/nginx.conf /etc/nginx/conf.d/default.conf
 COPY landing/index.html landing/styles.css landing/main.js /usr/share/nginx/html/
