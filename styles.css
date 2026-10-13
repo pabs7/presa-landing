@@ -68,19 +68,7 @@ h3 { font-size: 26px; font-weight: 600; line-height: 1; }
 
 /* Ilustración del móvil con la app */
 .phone { justify-self: center; width: min(300px, 100%); padding: 12px; border-radius: 34px; background: #0c1411; box-shadow: 0 30px 80px rgba(0, 0, 0, .45); }
-.phone-screen { display: grid; gap: 10px; padding: 22px 16px 26px; border-radius: 24px; background: var(--paper); color: var(--ink); }
-.phone-top { display: flex; align-items: center; gap: 6px; font-family: var(--display); font-size: 18px; font-weight: 800; }
-.phone-top img { width: 30px; height: 18px; object-fit: contain; }
-.phone-eyebrow { margin: 8px 0 0; color: #74846f; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; }
-.phone-title { margin: 0; font-family: var(--display); font-size: 34px; font-weight: 600; line-height: 1; }
-.phone-membership { display: flex; justify-content: space-between; padding: 10px 12px; border-radius: 3px; background: var(--forest); color: #fff; font-size: 11px; }
-.phone-membership strong { color: var(--leaf); }
-.phone-slot { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 3px; background: #fff; font-size: 11px; }
-.phone-slot strong { font-family: var(--display); font-size: 18px; }
-.phone-slot span { color: var(--muted); }
-.phone-slot em { padding: 5px 8px; border-radius: 3px; background: var(--forest); color: #fff; font-style: normal; font-weight: 700; }
-.phone-slot-booked { border-color: var(--hold); }
-.phone-slot-booked em { background: #f4e1dc; color: #a24631; }
+.phone-screen { display: block; width: 100%; height: auto; border-radius: 24px; background: var(--paper); }
 
 /* Secciones */
 .section { padding: 96px var(--gutter); }
