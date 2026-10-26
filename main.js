@@ -16,7 +16,7 @@
   })
 
   var label = document.querySelector('[data-member-cta-label]')
-  if (label) label.textContent = isMobile ? 'Descargar la app' : 'Entrar en la app'
+  if (label) label.textContent = isMobile ? 'Instalar la app' : 'Entrar en la app'
 
   var note = document.querySelector('[data-member-note]')
   if (note) {
