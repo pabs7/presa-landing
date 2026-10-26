@@ -3,7 +3,7 @@
 set -e
 
 export PRESA_APP_URL="${PRESA_APP_URL:-http://localhost}"
-export PRESA_CONTACT_EMAIL="${PRESA_CONTACT_EMAIL:-ejemplo@presa.com}"
+export PRESA_CONTACT_EMAIL="${PRESA_CONTACT_EMAIL:-contacto@presaclimb.es}"
 
 page=/usr/share/nginx/html/index.html
 envsubst '${PRESA_APP_URL} ${PRESA_CONTACT_EMAIL}' < "$page" > /tmp/index.html
