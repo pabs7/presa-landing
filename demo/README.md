@@ -16,7 +16,7 @@ docker compose run --rm -v "$PWD/e2e/capture-output:/in" -v "$PWD/landing:/landi
   python /landing/demo/to_webp.py /in /landing/img
 ```
 
-Accesos del club demo: `laura@demo.presa.test` (socia) y `admin@demo.presa.test` (administrador),
+Accesos del club demo: `sara@demo.presa.test` (socia) y `admin@demo.presa.test` (administrador),
 contraseña `Demo-presa-2026`.
 
 Del panel solo se enseña la importación de socios: el resto del panel aún está en inglés.

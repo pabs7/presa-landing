@@ -33,7 +33,7 @@ if not settings.DEBUG:
 CODE = 'demo'
 PASSWORD = 'Demo-presa-2026'
 MEMBERS = [
-    ('laura', 'Laura', 'Martín'), ('pablo', 'Pablo', 'Ruiz'), ('irene', 'Irene', 'Soler'),
+    ('sara', 'Sara', 'Martín'), ('pablo', 'Pablo', 'Ruiz'), ('irene', 'Irene', 'Soler'),
     ('marcos', 'Marcos', 'Vidal'), ('nuria', 'Nuria', 'Campos'), ('hugo', 'Hugo', 'Ferrer'),
     ('alba', 'Alba', 'Moreno'), ('jorge', 'Jorge', 'Navarro'), ('carla', 'Carla', 'Ibáñez'),
     ('sergio', 'Sergio', 'Prieto'), ('marta', 'Marta', 'Gil'), ('dani', 'Dani', 'Ortega'),
@@ -101,7 +101,7 @@ def reset_club() -> Club:
 
 
 def create_people(today) -> dict[str, User]:
-    """Crea los socios, el personal y sus cuotas; Laura tiene la cuota a 5 días de terminar."""
+    """Crea los socios, el personal y sus cuotas; Sara tiene la cuota a 5 días de terminar."""
     admin = User.objects.get(email='admin@demo.presa.test')
     admin.first_name, admin.last_name, admin.must_change_password = 'Admin', 'Demo', False
     admin.role, admin.is_staff, admin.is_superuser = User.Role.ADMIN, True, True
@@ -111,9 +111,9 @@ def create_people(today) -> dict[str, User]:
     for key, first, last in MEMBERS:
         people[key] = User.objects.create_user(email=f'{key}@demo.presa.test', password=PASSWORD, first_name=first,
                                                last_name=last, waiver_signed_at=signed)
-        ends_on = today + timedelta(days=5) if key == 'laura' else today + timedelta(days=rng.randint(20, 300))
+        ends_on = today + timedelta(days=5) if key == 'sara' else today + timedelta(days=rng.randint(20, 300))
         Membership.objects.create(user=people[key], starts_on=today - timedelta(days=60), ends_on=ends_on,
-                                  auto_renew=key != 'laura')
+                                  auto_renew=key != 'sara')
     people['staff'] = User.objects.create_user(email='equipo@demo.presa.test', password=PASSWORD, first_name='Equipo',
                                                last_name='Demo', role=User.Role.STAFF, waiver_signed_at=signed)
     return people
@@ -137,7 +137,7 @@ def create_agenda(people: dict[str, User], now) -> None:
         local_hour = timezone.localtime(session.starts_at).hour
         busy = 17 <= local_hour <= 21
         for member in rng.sample(members, rng.randint(4, 11) if busy else rng.randint(0, 3)):
-            if member is not people['laura']:
+            if member is not people['sara']:
                 try_book(user=member, session=session, now=now)
     gym = spaces[2]
     evening = sessions.filter(space=gym, starts_at__gte=now + timedelta(hours=2)).order_by('starts_at').first()
@@ -146,13 +146,13 @@ def create_agenda(people: dict[str, User], now) -> None:
             if not Booking.objects.filter(user=member, session=evening).exists():
                 try_book(user=member, session=evening, now=now)
     tomorrow_evening = timezone.make_aware(datetime.combine(now.date() + timedelta(days=1), time(18)))
-    laura_slot = Session.objects.filter(space=spaces[0], starts_at=tomorrow_evening).first()
-    if laura_slot is not None:
-        try_book(user=people['laura'], session=laura_slot, now=now)
+    sara_slot = Session.objects.filter(space=spaces[0], starts_at=tomorrow_evening).first()
+    if sara_slot is not None:
+        try_book(user=people['sara'], session=sara_slot, now=now)
 
 
 def create_walls(people: dict[str, User], today, now) -> None:
-    """Dos multipresa con vías de los socios y tres bloques; uno, proyecto de Laura, se desmonta en 3 días."""
+    """Dos multipresa con vías de los socios y tres bloques; uno, proyecto de Sara, se desmonta en 3 días."""
     authors = [people[key] for key in ('pablo', 'irene', 'marcos', 'nuria', 'hugo', 'alba')]
     route_names = [('La diagonal', '6a'), ('Amarilla de calentar', '5'), ('El techo', '6c+'), ('Regletas', '6b'),
                    ('Travesía larga', '6a+'), ('Explosiva', '7a')]
@@ -172,7 +172,7 @@ def create_walls(people: dict[str, User], today, now) -> None:
                 RouteAscent.objects.create(route=route, user=member, style=rng.choice(['flash', 'done', 'done', 'project']))
     first = Route.objects.get(wall__slug='desplome', name='La diagonal')
     RouteComment.objects.create(route=first, author=people['irene'], body='Muy bonita, el paso del medio es la clave.')
-    RouteComment.objects.create(route=first, author=people['laura'], body='¡Por fin la saqué! Gracias por montarla.')
+    RouteComment.objects.create(route=first, author=people['sara'], body='¡Por fin la saqué! Gracias por montarla.')
     boulders = [('la-fisura', 'La fisura', '6b', 3, 31), ('techo-amarillo', 'Techo amarillo', '7a', 10, 37),
                 ('el-tobogan', 'El tobogán', '5+', None, 43)]
     for order, (slug, name, grade, days, seed) in enumerate(boulders, start=3):
@@ -185,7 +185,7 @@ def create_walls(people: dict[str, User], today, now) -> None:
     mark = {'la-fisura': 'project', 'el-tobogan': 'flash'}
     for slug, style in mark.items():
         RouteAscent.objects.create(route=Route.objects.get(wall__slug=slug, is_wall_problem=True),
-                                   user=people['laura'], style=style)
+                                   user=people['sara'], style=style)
     Wall.objects.exclude(slug='el-tobogan').update(created_at=now - timedelta(days=20))
 
 
@@ -205,9 +205,9 @@ def create_club_life(people: dict[str, User], now) -> None:
     for member in [people[key] for key in ('pablo', 'irene', 'marcos', 'nuria', 'hugo', 'alba', 'jorge')]:
         response = PollResponse.objects.create(poll=poll, user=member)
         PollSelection.objects.create(response=response, option=rng.choice(options))
-    ticket = Ticket.objects.create(author=people['laura'], subject='La ducha de la izquierda no calienta',
+    ticket = Ticket.objects.create(author=people['sara'], subject='La ducha de la izquierda no calienta',
                                    last_message_at=now - timedelta(hours=1))
-    TicketMessage.objects.create(ticket=ticket, author=people['laura'], body='Desde ayer sale fría.')
+    TicketMessage.objects.create(ticket=ticket, author=people['sara'], body='Desde ayer sale fría.')
     TicketMessage.objects.create(ticket=ticket, author=staff, body='Gracias por avisar, mañana viene el técnico.')
 
 
@@ -219,4 +219,4 @@ with schema_context(club.schema_name):
     create_agenda(people, now)
     create_walls(people, today, now)
     create_club_life(people, now)
-print(f'Club demo listo: /club/{CODE}/ · laura@demo.presa.test / {PASSWORD} · admin@demo.presa.test / {PASSWORD}')
+print(f'Club demo listo: /club/{CODE}/ · sara@demo.presa.test / {PASSWORD} · admin@demo.presa.test / {PASSWORD}')
