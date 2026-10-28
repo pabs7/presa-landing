@@ -3,229 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#17211e" />
+    <meta name="theme-color" content="#1c3029" />
     <title>Presa | Las vías de tu rocódromo, en el móvil</title>
     <meta name="description" content="Presa es la app para rocódromos: las vías de tus muros marcadas sobre la foto, bloques con fecha de desmontaje, avisos, encuestas, buzón y, si lo necesitas, reservas con aforo. Con un panel para tu equipo." />
     <link rel="icon" type="image/png" href="/presa-logo.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@500&display=swap" />
     <link rel="stylesheet" href="/styles.css" />
+    <script src="/main.js" defer></script>
   </head>
   <body data-app-url="${PRESA_APP_URL}" data-contact-email="${PRESA_CONTACT_EMAIL}">
-    <header class="site-header">
-      <a class="brand" href="#inicio"><img alt="" src="/presa-logo.png" /><span>Presa</span></a>
-      <nav aria-label="Secciones" class="site-nav">
-        <a href="#ventajas">Ventajas</a>
-        <a href="#app">La app</a>
-        <a href="#panel">Panel</a>
-        <a href="#precio">Precio</a>
-        <a href="#preguntas">Preguntas</a>
-      </nav>
-      <a class="button button-light" data-member-link href="${PRESA_APP_URL}/">Entrar</a>
-    </header>
+<svg aria-hidden="true" width="0" height="0" style="position:absolute">
+  <symbol id="hold-asa" viewBox="0 0 120 96"><path d="M14 52C8 30 26 10 52 12C70 13 78 4 96 10C112 16 116 34 108 50C100 66 108 78 94 86C78 94 62 84 46 88C28 92 18 74 14 52Z"/><circle fill="#fbfcf8" cx="92" cy="30" r="9"/></symbol>
+  <symbol id="hold-regleta" viewBox="0 0 120 96"><path d="M6 44C8 30 28 24 60 24C90 24 112 26 114 42C116 56 104 68 82 72C60 76 40 78 22 70C10 64 4 56 6 44Z"/><circle fill="#fbfcf8" cx="98" cy="42" r="9"/></symbol>
+  <symbol id="hold-romo" viewBox="0 0 120 96"><path d="M20 30C30 10 60 6 84 14C106 22 116 44 108 64C100 84 74 92 50 88C26 84 10 70 12 52C13 42 15 38 20 30Z"/><circle fill="#fbfcf8" cx="86" cy="62" r="9"/></symbol>
+  <symbol id="hold-pinza" viewBox="0 0 120 96"><path d="M30 14C42 4 58 8 66 20C72 30 84 26 98 24C112 22 118 38 110 50C102 60 96 64 98 78C100 92 84 96 74 88C64 80 52 82 38 86C22 90 10 78 14 64C17 54 10 46 12 36C14 26 22 20 30 14Z"/><circle fill="#fbfcf8" cx="96" cy="38" r="9"/></symbol>
+</svg>
 
-    <main>
-      <section class="hero" id="inicio">
-        <div class="hero-copy">
-          <p class="eyebrow eyebrow-light">PARA ROCÓDROMOS</p>
-          <h1>Las vías de tu rocódromo, en el móvil de cada socio.</h1>
-          <p class="hero-lead">
-            Tus socios ven las vías marcadas sobre la foto de cada muro, crean las suyas, las comentan y llevan
-            su progreso. Además: avisos, encuestas, buzón y, si lo necesitas, reservas. Sin instalar nada.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-leaf" data-contact-link href="mailto:${PRESA_CONTACT_EMAIL}?subject=Quiero%20una%20demo%20de%20Presa">Pide una demo</a>
-            <a class="button button-outline-light" href="#app">Ver la app</a>
-          </div>
-          <p class="hero-note">¿Ya eres socio? <a href="#socios">Entra en la app</a>.</p>
-        </div>
+<div class="wall">
+  <header class="wrap top">
+    <a class="logo" href="#inicio"><img src="/img/presa-logo-claro.png" width="900" height="629" alt="Presa"></a>
+    <nav class="nav" aria-label="Secciones"><a href="#app">La app</a><a href="#panel">Panel</a><a href="#precio">Precio</a><a href="#preguntas">Preguntas</a><a class="nav-cta" data-member-link href="${PRESA_APP_URL}/">Entrar</a></nav>
+  </header>
+  <section class="wrap hero" id="inicio">
+    <div>
+      <p class="mono" style="color:var(--leaf)">Para rocódromos · Bloque · Cuerda · Multipresa</p>
+      <h1>Las vías de tu <span class="tape">roco</span>, en el móvil de <span class="outline">cada socio.</span></h1>
+      <p class="lead">Tus socios ven las vías marcadas sobre la foto de cada muro, crean las suyas, las comentan y llevan su progreso. Además: avisos, encuestas, buzón y, si lo necesitas, reservas.</p>
+      <div class="cta-row">
+        <a class="btn btn-leaf" href="mailto:${PRESA_CONTACT_EMAIL}?subject=Quiero%20una%20demo%20de%20Presa">Pide una demo</a>
+        <a class="btn btn-ghost" href="#app">Ver la app</a>
+      </div>
+      <p class="note">Escríbenos: <a class="email" data-contact-link href="mailto:${PRESA_CONTACT_EMAIL}">${PRESA_CONTACT_EMAIL}</a></p>
+    </div>
+    <div class="stage">
+      <svg class="hold h1" aria-hidden="true" viewBox="0 0 120 96"><use href="#hold-pinza"/></svg><svg class="hold h2" aria-hidden="true" viewBox="0 0 120 96"><use href="#hold-asa"/></svg><svg class="hold h3" aria-hidden="true" viewBox="0 0 120 96"><use href="#hold-regleta"/></svg>
+      <figure class="phone b"><img src="/img/bloque.webp" width="600" height="1298" alt="Bloque La fisura, 6b, en proyecto y con fecha de desmontaje"></figure>
+      <figure class="phone a"><img src="/img/muro.webp" width="600" height="1298" alt="Muro Desplome con las presas de la vía La diagonal marcadas"></figure>
+      <div class="sticker" aria-hidden="true"><span><b>6b</b>en proyecto</span></div>
+    </div>
+  </section>
+</div>
 
-        <figure class="phone phone-hero">
-          <img alt="Muro multipresa en la app Presa con las presas de una vía marcadas, sus marcas y comentarios" class="phone-screen" height="1298" src="/img/muro.webp" width="600" />
-        </figure>
-      </section>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>5</span><span>5+</span><span>6a</span><span>6a+</span><span>6b</span><span>6b+</span><span>6c</span><span>6c+</span><span>7a</span><span>7a+</span><span>Flasheada</span><span>Hecha</span><span>En proyecto</span><span>Nueva vía</span>
+    <span>5</span><span>5+</span><span>6a</span><span>6a+</span><span>6b</span><span>6b+</span><span>6c</span><span>6c+</span><span>7a</span><span>7a+</span><span>Flasheada</span><span>Hecha</span><span>En proyecto</span><span>Nueva vía</span>
+  </div>
+</div>
 
-      <section class="section" id="ventajas">
-        <p class="eyebrow">VENTAJAS</p>
-        <h2>Tu muro vive en el móvil de tus socios.</h2>
-        <div class="stats">
-          <article class="stat">
-            <strong>1</strong>
-            <h3>foto por muro</h3>
-            <p>Subes la foto del muro y tus socios crean las vías encima, marcando las presas de inicio, mano, pie y final.</p>
-          </article>
-          <article class="stat">
-            <strong>3</strong>
-            <h3>marcas por vía</h3>
-            <p>En proyecto, flasheada o hecha: cada socio lleva su progreso y ve quién más la ha hecho.</p>
-          </article>
-          <article class="stat">
-            <strong>1</strong>
-            <h3>Excel para dar de alta al club</h3>
-            <p>Sube tu lista de socios y cada uno recibe su acceso, con una contraseña inicial que cambia al entrar.</p>
-          </article>
-          <article class="stat">
-            <strong>5</strong>
-            <h3>secciones a tu medida</h3>
-            <p>Muros, Noticias, Encuestas, Buzón y Agenda. Activa solo las que tu rocódromo vaya a usar.</p>
-          </article>
-        </div>
-      </section>
+<main>
+  <section class="wrap band" id="ventajas">
+    <p class="mono">Ventajas</p>
+    <h2>Tu muro vive en el <em>móvil</em> de tus socios.</h2>
+    <div class="stats">
+      <article class="stat"><div class="num num-leaf"><svg aria-hidden="true" viewBox="0 0 120 96"><use href="#hold-asa"/></svg><span>1</span></div><h3>foto por muro</h3><p>Subes la foto y tus socios crean las vías encima, marcando presas de inicio, mano, pie y final.</p></article>
+      <article class="stat"><div class="num num-forest"><svg aria-hidden="true" viewBox="0 0 120 96"><use href="#hold-regleta"/></svg><span>3</span></div><h3>marcas por vía</h3><p>En proyecto, flasheada o hecha: cada socio lleva su progreso y ve quién más la ha hecho.</p></article>
+      <article class="stat"><div class="num num-leaf"><svg aria-hidden="true" viewBox="0 0 120 96"><use href="#hold-romo"/></svg><span>1</span></div><h3>Excel de alta</h3><p>Todo el club con acceso, con una contraseña inicial que cada socio cambia al entrar.</p></article>
+      <article class="stat"><div class="num num-forest"><svg aria-hidden="true" viewBox="0 0 120 96"><use href="#hold-pinza"/></svg><span>5</span></div><h3>secciones a tu medida</h3><p>Muros, Noticias, Encuestas, Buzón y Agenda. Activa solo las que vayas a usar.</p></article>
+    </div>
+  </section>
 
-      <section class="section section-tint" id="app">
-        <p class="eyebrow">LA APP DE TUS SOCIOS</p>
-        <h2>Todo lo que tus socios buscan, en un sitio.</h2>
+  <section id="app">
+    <div class="feature dark"><div class="wrap feature-row">
+      <div class="copy"><span class="grade">Muros · Multipresa</span><h3>Las vías de tus muros, en el móvil.</h3><p>Sobre la foto de cada muro, los socios crean vías marcando presas y les ponen grado. Las comentan, las marcan y buscan por grado en todo el rocódromo.</p>
+        <ul class="ticks"><li>Vías creadas por tus socios</li><li>Búsqueda por grado en todos los muros</li><li>Comentarios y marcas con quién la ha hecho</li></ul></div>
+      <figure class="shot"><img src="/img/muro.webp" width="600" height="1298" loading="lazy" alt="Vía La diagonal con presas marcadas y comentarios"></figure>
+    </div></div>
+    <div class="feature leaf"><div class="wrap feature-row flip">
+      <div class="copy"><span class="grade">Bloques · Fecha de desmontaje</span><h3>Bloques que cambian. Socios que no se los pierden.</h3><p>Cada bloque con su grado y, si quieres, su fecha de desmontaje. Quien lo tiene en proyecto recibe un aviso en la app antes de que lo quites.</p>
+        <ul class="ticks"><li>Aviso a quien lo tiene en proyecto</li><li>Bloques nuevos destacados en Inicio</li><li>Pasada la fecha, desaparece solo</li></ul></div>
+      <figure class="shot"><img src="/img/bloque.webp" width="600" height="1298" loading="lazy" alt="Bloque en proyecto con su fecha de desmontaje"></figure>
+    </div></div>
+    <div class="feature paper"><div class="wrap feature-row">
+      <div class="copy"><span class="grade">Inicio</span><h3>Lo importante, nada más abrir.</h3><p>Proyectos que se desmontan pronto, bloques nuevos, noticias sin leer, respuestas del club y, si usas reservas, la próxima sesión.</p></div>
+      <figure class="shot"><img src="/img/inicio.webp" width="600" height="1298" loading="lazy" alt="Inicio con el resumen de Sara"></figure>
+    </div></div>
+    <div class="feature night"><div class="wrap feature-row flip">
+      <div class="copy"><span class="grade">Noticias · Encuestas · Buzón</span><h3>Avisos que sí se leen.</h3><p>Noticias, encuestas y un buzón para hablar con el club, fuera de los grupos de mensajería. Un punto avisa de lo nuevo.</p></div>
+      <figure class="shot"><img src="/img/noticias.webp" width="600" height="1298" loading="lazy" alt="Noticias del rocódromo con un aviso fijado"></figure>
+    </div></div>
+    <div class="feature paper"><div class="wrap feature-row">
+      <div class="copy"><span class="grade">Agenda · Opcional</span><h3>¿Controlas el aforo? Activa las reservas.</h3><p>Cada espacio con su aforo y horario, lista de espera automática y cierres por limpieza. Si no lo necesitas, la dejas apagada.</p></div>
+      <figure class="shot"><img src="/img/agenda.webp" width="600" height="1298" loading="lazy" alt="Agenda del espacio Bloque con plazas libres"></figure>
+    </div></div>
+  </section>
 
-        <div class="showcase">
-          <div class="showcase-copy">
-            <h3>Las vías de tus muros, en el móvil</h3>
-            <p>Sobre la foto de cada muro, los socios crean vías marcando las presas y les ponen grado. Las comentan, las marcan como flasheada, hecha o en proyecto, y buscan por grado en todo el rocódromo.</p>
-            <ul class="checks">
-              <li>Muros multipresa con las vías de tus socios</li>
-              <li>Búsqueda por grado en todos los muros a la vez</li>
-              <li>Comentarios y marcas en cada vía, con quién la ha hecho</li>
-            </ul>
-          </div>
-          <figure class="phone"><img alt="Muro multipresa con las presas de una vía marcadas" class="phone-screen" height="1298" loading="lazy" src="/img/muro.webp" width="600" /></figure>
-        </div>
+  <section class="wall panel" id="panel"><div class="wrap">
+    <p class="mono" style="color:var(--leaf)">Panel del club</p>
+    <h2 class="big">Tu equipo lo gestiona desde <em>un panel propio.</em></h2>
+    <div class="panel-grid">
+      <ul>
+        <li><b>Muros y bloques</b>Fotos de los muros, grados y fechas de desmontaje.</li>
+        <li><b>Socios y cuotas</b>Alta con un Excel, cuotas con renovación automática y exenciones.</li>
+        <li><b>Noticias, encuestas y buzón</b>Avisos fijados, votaciones y consultas.</li>
+        <li><b>Tus datos, solo tuyos</b>Separados de los de cualquier otro rocódromo.</li>
+      </ul>
+      <figure class="browser"><div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span></div><img src="/img/panel-importar.webp" width="1100" height="386" loading="lazy" alt="Importar socios con la plantilla Excel"></figure>
+    </div>
+  </div></section>
 
-        <div class="showcase showcase-reverse">
-          <div class="showcase-copy">
-            <h3>Bloques que cambian, socios que no se los pierden</h3>
-            <p>Cada bloque tiene su grado y, si quieres, su fecha de desmontaje. Quien lo tiene en proyecto recibe un aviso en la app antes de que lo quites, y los bloques recién montados aparecen en Inicio.</p>
-            <ul class="checks">
-              <li>Fecha de desmontaje con aviso a quien lo tiene en proyecto</li>
-              <li>Bloques nuevos destacados al abrir la app</li>
-              <li>Pasada la fecha, el bloque desaparece solo</li>
-            </ul>
-          </div>
-          <figure class="phone"><img alt="Bloque en proyecto con su fecha de desmontaje" class="phone-screen" height="1298" loading="lazy" src="/img/bloque.webp" width="600" /></figure>
-        </div>
+  <section class="wrap price" id="precio">
+    <p class="mono">Precio</p>
+    <h2 class="big">Una licencia por rocódromo.</h2>
+    <div class="ticket">
+      <div><p>Te preparamos un presupuesto según el tamaño de tu club. Incluye:</p>
+        <ul class="ticks"><li>La app para todos tus socios</li><li>El panel de gestión</li><li>Alta inicial de tus socios</li><li>Alojamiento y actualizaciones</li><li>Soporte por correo</li></ul></div>
+      <div class="stub"><strong>Pídenos presupuesto</strong><span>Cuéntanos cuántos socios y muros tienes.</span><a class="btn btn-forest" href="mailto:${PRESA_CONTACT_EMAIL}?subject=Presupuesto%20de%20Presa">Pedir presupuesto</a><a class="email" data-contact-link href="mailto:${PRESA_CONTACT_EMAIL}">${PRESA_CONTACT_EMAIL}</a></div>
+    </div>
+    <ol class="steps"><li><div class="num num-small num-forest"><svg aria-hidden="true" viewBox="0 0 120 96"><use href="#hold-pinza"/></svg><span>1</span></div><b>Damos de alta tu roco</b>Te entregamos el acceso al panel.</li><li><div class="num num-small num-forest"><svg aria-hidden="true" viewBox="0 0 120 96"><use href="#hold-asa"/></svg><span>2</span></div><b>Subes muros y socios</b>Fotos de los muros y un Excel con tus socios.</li><li><div class="num num-small num-forest"><svg aria-hidden="true" viewBox="0 0 120 96"><use href="#hold-romo"/></svg><span>3</span></div><b>Tus socios escalan</b>Instalan la app y empiezan a crear vías.</li></ol>
+  </section>
 
-        <div class="showcase">
-          <div class="showcase-copy">
-            <h3>Lo importante, nada más abrir</h3>
-            <p>Inicio resume lo que le toca a cada socio: sus proyectos que se desmontan pronto, los bloques nuevos, las noticias sin leer, las respuestas del club y, si usas reservas, su próxima sesión.</p>
-          </div>
-          <figure class="phone"><img alt="Pantalla de Inicio con el resumen del socio" class="phone-screen" height="1298" loading="lazy" src="/img/inicio.webp" width="600" /></figure>
-        </div>
+  <section class="members wall"><div class="wrap">
+    <div><h2>¿Tu roco ya usa Presa?</h2><p class="members-note" data-member-note>¿Estás en el móvil? Desde allí puedes instalar la app.</p></div>
+    <a class="btn btn-leaf" data-member-cta href="${PRESA_APP_URL}/"><span data-member-cta-label>Entrar en la app</span></a>
+  </div></section>
 
-        <div class="showcase showcase-reverse">
-          <div class="showcase-copy">
-            <h3>Avisos que sí se leen</h3>
-            <p>Noticias, encuestas y un buzón para hablar con el club, fuera de los grupos de mensajería. Un punto en cada sección avisa de lo nuevo.</p>
-          </div>
-          <figure class="phone"><img alt="Noticias del rocódromo con un aviso fijado" class="phone-screen" height="1298" loading="lazy" src="/img/noticias.webp" width="600" /></figure>
-        </div>
-
-        <div class="showcase">
-          <div class="showcase-copy">
-            <h3>Y si controlas el aforo, reservas</h3>
-            <p>Si tu rocódromo necesita limitar cuántos escalan a la vez, activa la Agenda: cada espacio con su aforo y su horario, lista de espera automática y cierres por limpieza o eventos. Si no, la dejas apagada.</p>
-          </div>
-          <figure class="phone"><img alt="Agenda del espacio Bloque con plazas libres e iniciales de quién va" class="phone-screen" height="1298" loading="lazy" src="/img/agenda.webp" width="600" /></figure>
-        </div>
-      </section>
-
-      <section class="section section-dark" id="panel">
-        <div class="panel">
-          <div>
-            <p class="eyebrow eyebrow-light">PANEL DEL CLUB</p>
-            <h2>Tu equipo lo gestiona desde un panel propio.</h2>
-            <ul class="clubs-list">
-              <li><strong>Muros y bloques</strong><span>Fotos de los muros, bloques con su grado y su fecha de desmontaje.</span></li>
-              <li><strong>Socios y cuotas</strong><span>Alta con un Excel, cuotas con renovación automática y la exención firmada de cada socio.</span></li>
-              <li><strong>Noticias, encuestas y buzón</strong><span>Avisos fijados, votaciones y las consultas de tus socios.</span></li>
-              <li><strong>Tus datos, solo tuyos</strong><span>Los datos de cada rocódromo están separados de los demás.</span></li>
-            </ul>
-          </div>
-          <figure class="browser">
-            <div aria-hidden="true" class="browser-bar"><span></span><span></span><span></span></div>
-            <img alt="Panel del club: importar socios descargando la plantilla y subiendo el Excel relleno" height="386" loading="lazy" src="/img/panel-importar.webp" width="1100" />
-            <figcaption>Alta de todo el club: descarga la plantilla, rellénala y súbela.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="section" id="precio">
-        <p class="eyebrow">PRECIO</p>
-        <h2>Una licencia por rocódromo.</h2>
-        <div class="pricing">
-          <div class="pricing-copy">
-            <p>Te preparamos un presupuesto según el tamaño de tu club. La licencia incluye:</p>
-            <ul class="checks">
-              <li>La app para todos tus socios, con todas las secciones</li>
-              <li>El panel de gestión para tu equipo</li>
-              <li>Alta inicial de tus socios</li>
-              <li>Alojamiento y actualizaciones</li>
-              <li>Soporte por correo</li>
-            </ul>
-          </div>
-          <div class="pricing-cta">
-            <strong>Pídenos presupuesto</strong>
-            <p>Cuéntanos cuántos socios y espacios tienes y te respondemos.</p>
-            <a class="button button-leaf" data-contact-link href="mailto:${PRESA_CONTACT_EMAIL}?subject=Presupuesto%20de%20Presa%20para%20mi%20roc%C3%B3dromo">Pedir presupuesto</a>
-            <p class="clubs-contact">o escríbenos a <a data-contact-link href="mailto:${PRESA_CONTACT_EMAIL}">${PRESA_CONTACT_EMAIL}</a></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-tint" id="como-funciona">
-        <p class="eyebrow">CÓMO FUNCIONA</p>
-        <h2>En marcha en tres pasos.</h2>
-        <ol class="steps">
-          <li><span>1</span><strong>Damos de alta tu rocódromo</strong><p>Te entregamos el acceso al panel de tu club.</p></li>
-          <li><span>2</span><strong>Configuras tu club</strong><p>Espacios, horarios, muros y socios, a tu manera.</p></li>
-          <li><span>3</span><strong>Tus socios reservan</strong><p>Eligen tu rocódromo en la app, la instalan y listo.</p></li>
-        </ol>
-      </section>
-
-      <section class="section section-members" id="socios">
-        <div>
-          <p class="eyebrow">PARA SOCIOS</p>
-          <h2>¿Tu rocódromo ya usa Presa?</h2>
-          <p class="members-lead">Entra con la cuenta que te ha dado tu club: busca tu rocódromo o escribe su código.</p>
-        </div>
-        <div class="members-actions">
-          <a class="button button-dark" data-member-cta href="${PRESA_APP_URL}/"><span data-member-cta-label>Entrar en la app</span></a>
-          <p class="hero-note-dark" data-member-note>¿Estás en el móvil? Desde allí puedes instalar la app.</p>
-        </div>
-      </section>
-
-      <section class="section section-faq" id="preguntas">
-        <p class="eyebrow">PREGUNTAS FRECUENTES</p>
-        <h2>Dudas habituales.</h2>
-        <details>
-          <summary>¿Mi rocódromo necesita servidores o conocimientos técnicos?</summary>
-          <p>No. Nos ocupamos del alojamiento y de las actualizaciones; tu equipo solo usa el panel de gestión.</p>
-        </details>
-        <details>
-          <summary>¿Tengo que usar las reservas?</summary>
-          <p>No. Cada sección (Muros, Noticias, Encuestas, Buzón y Agenda) se activa o se apaga desde el panel, y tus socios solo ven las activas. Puedes usar Presa solo para los muros y la comunicación con tus socios.</p>
-        </details>
-        <details>
-          <summary>¿Cómo damos de alta a los socios?</summary>
-          <p>Con un Excel desde el panel. No hay registro público: solo entra quien da de alta tu club.</p>
-        </details>
-        <details>
-          <summary>¿Hay que descargar algo de una tienda de aplicaciones?</summary>
-          <p>No. Presa se instala desde el navegador del móvil: abre la app y pulsa «Instalar app». En iPhone, desde Safari: Compartir → «Añadir a pantalla de inicio».</p>
-        </details>
-        <details>
-          <summary>¿Funciona en iPhone y en Android?</summary>
-          <p>Sí, en los dos, y también desde el ordenador.</p>
-        </details>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <a class="brand" href="#inicio"><img alt="" src="/presa-logo.png" /><span>Presa</span></a>
-      <p>Contacto: <a data-contact-link href="mailto:${PRESA_CONTACT_EMAIL}">${PRESA_CONTACT_EMAIL}</a></p>
-      <p class="footer-copy">© <span data-year></span> Presa</p>
-    </footer>
-
-    <script src="/main.js"></script>
+  <section class="wrap faq" id="preguntas">
+    <p class="mono">Preguntas</p>
+    <details><summary>¿Tengo que usar las reservas?</summary><p>No. Cada sección se activa o se apaga desde el panel. Puedes usar Presa solo para los muros y la comunicación con tus socios.</p></details>
+    <details><summary>¿Hay que descargar algo de una tienda?</summary><p>No. Se instala desde el navegador del móvil, en iPhone y en Android.</p></details>
+    <details><summary>¿Cómo damos de alta a los socios?</summary><p>Con un Excel desde el panel. No hay registro público.</p></details>
+  </section>
+</main>
+<footer><div class="wrap"><img class="footer-logo" src="/img/presa-logo-claro.png" width="900" height="629" alt="Presa"><a class="email" data-contact-link href="mailto:${PRESA_CONTACT_EMAIL}">${PRESA_CONTACT_EMAIL}</a><span class="footer-copy">© <span data-year>2026</span> Presa</span></div></footer>
   </body>
 </html>
